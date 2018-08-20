@@ -21,7 +21,7 @@ import java.util.List;
 public class BookMarkAdapter extends EasyLVAdapter<BookMark> {
 
     public BookMarkAdapter(Context context, List<BookMark> list) {
-        super(context, list, R.layout.item_read_mark);
+        super(context, list, R.layout.book_item_read_mark);
     }
 
     @Override

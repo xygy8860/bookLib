@@ -45,7 +45,7 @@ public class BookDiscussionAdapter extends RecyclerArrayAdapter<DiscussionList.P
 
     @Override
     public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
-        return new BaseViewHolder<DiscussionList.PostsBean>(parent, R.layout.item_community_book_discussion_list) {
+        return new BaseViewHolder<DiscussionList.PostsBean>(parent, R.layout.book_item_community_book_discussion_list) {
             @Override
             public void setData(DiscussionList.PostsBean item) {
                 if (!SettingManager.getInstance().isNoneCover()) {

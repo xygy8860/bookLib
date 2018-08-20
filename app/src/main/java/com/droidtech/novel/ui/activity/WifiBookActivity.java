@@ -54,7 +54,7 @@ public class WifiBookActivity extends BaseActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_wifi_book;
+        return R.layout.book_activity_wifi_book;
     }
 
     @Override

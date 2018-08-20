@@ -46,7 +46,7 @@ public class ReadPDFActivity extends BaseActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_read_pdf;
+        return R.layout.book_activity_read_pdf;
     }
 
     @Override

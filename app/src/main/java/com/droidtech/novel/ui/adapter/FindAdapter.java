@@ -35,7 +35,7 @@ public class FindAdapter extends EasyRVAdapter<FindBean> {
 
     public FindAdapter(Context context, List<FindBean> list, OnRvItemClickListener
             listener) {
-        super(context, list, R.layout.item_find);
+        super(context, list, R.layout.book_item_find);
         this.itemClickListener = listener;
     }
 

@@ -51,7 +51,7 @@ public class LoginPopupWindow extends PopupWindow implements View.OnTouchListene
         setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
         setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        mContentView = LayoutInflater.from(activity).inflate(R.layout.layout_login_popup_window, null);
+        mContentView = LayoutInflater.from(activity).inflate(R.layout.book_layout_login_popup_window, null);
         setContentView(mContentView);
 
         qq = (ImageView) mContentView.findViewById(R.id.ivQQ);

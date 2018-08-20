@@ -40,7 +40,7 @@ public class BookDetailReviewAdapter extends RecyclerArrayAdapter<HotReview.Revi
 
     @Override
     public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
-        return new BaseViewHolder<HotReview.Reviews>(parent, R.layout.item_book_detai_hot_review_list) {
+        return new BaseViewHolder<HotReview.Reviews>(parent, R.layout.book_item_book_detai_hot_review_list) {
             @Override
             public void setData(HotReview.Reviews item) {
                 if (!SettingManager.getInstance().isNoneCover()) {

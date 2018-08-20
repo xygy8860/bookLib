@@ -30,7 +30,7 @@ import java.util.List;
 public class AutoCompleteAdapter extends EasyLVAdapter<String> {
 
     public AutoCompleteAdapter(Context context, List<String> list) {
-        super(context, list, R.layout.item_auto_complete_list);
+        super(context, list, R.layout.book_item_auto_complete_list);
     }
 
     @Override

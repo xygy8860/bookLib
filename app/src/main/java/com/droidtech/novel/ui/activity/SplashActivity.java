@@ -27,7 +27,10 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.kaiping);
+        setContentView(R.layout.book_kaiping);
+
+        new BaseApplication(getApplication());
+
         mJumpBtn = (TextView) findViewById(R.id.jump_btn);
         splashLayout = (RelativeLayout) findViewById(R.id.splashview);
 

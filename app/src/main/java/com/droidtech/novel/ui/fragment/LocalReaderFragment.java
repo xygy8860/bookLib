@@ -78,7 +78,7 @@ public class LocalReaderFragment extends BaseRVFragment<RecommendPresenter, Reco
 
     @Override
     public int getLayoutResId() {
-        return R.layout.fragment_recommend;
+        return R.layout.book_fragment_recommend;
     }
 
     @Override
@@ -93,7 +93,7 @@ public class LocalReaderFragment extends BaseRVFragment<RecommendPresenter, Reco
         mAdapter.addFooter(new RecyclerArrayAdapter.ItemView() {
             @Override
             public View onCreateView(ViewGroup parent) {
-                View headerView = LayoutInflater.from(activity).inflate(R.layout.foot_view_shelf, parent, false);
+                View headerView = LayoutInflater.from(activity).inflate(R.layout.book_foot_view_shelf, parent, false);
                 return headerView;
             }
 

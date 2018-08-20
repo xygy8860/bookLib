@@ -40,7 +40,7 @@ public class SearchAdapter extends RecyclerArrayAdapter<SearchDetail.SearchBooks
 
     @Override
     public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
-        return new BaseViewHolder<SearchDetail.SearchBooks>(parent, R.layout.item_search_result_list) {
+        return new BaseViewHolder<SearchDetail.SearchBooks>(parent, R.layout.book_item_search_result_list) {
             @Override
             public void setData(SearchDetail.SearchBooks item) {
                 holder.setRoundImageUrl(R.id.ivBookCover, Constant.IMG_BASE_URL + item.cover, R.drawable.cover_default)

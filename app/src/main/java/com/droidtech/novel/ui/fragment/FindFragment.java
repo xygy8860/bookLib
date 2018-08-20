@@ -54,7 +54,7 @@ public class FindFragment extends BaseFragment implements OnRvItemClickListener<
 
     @Override
     public int getLayoutResId() {
-        return R.layout.fragment_find;
+        return R.layout.book_fragment_find;
     }
 
     @Override

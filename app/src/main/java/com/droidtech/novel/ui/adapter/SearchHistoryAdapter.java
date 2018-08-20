@@ -30,7 +30,7 @@ import java.util.List;
 public class SearchHistoryAdapter extends EasyLVAdapter<String> {
 
     public SearchHistoryAdapter(Context context, List<String> list) {
-        super(context, list, R.layout.item_search_history);
+        super(context, list, R.layout.book_item_search_history);
     }
 
     @Override

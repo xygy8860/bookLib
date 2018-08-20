@@ -63,7 +63,7 @@ public class TopRankActivity extends BaseActivity implements TopRankContract.Vie
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_top_rank;
+        return R.layout.book_activity_top_rank;
     }
 
     @Override

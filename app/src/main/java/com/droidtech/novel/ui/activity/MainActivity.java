@@ -38,7 +38,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.droidtech.novel.BaseApplication;
 import com.droidtech.novel.R;
 import com.droidtech.novel.R2;
 import com.droidtech.novel.base.BaseActivity;
@@ -90,7 +89,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_main;
+        return R.layout.book_activity_main;
     }
 
     @Override

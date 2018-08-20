@@ -77,7 +77,7 @@ public class BookDetailCommunityActivity extends BaseActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_book_detail_community;
+        return R.layout.book_activity_book_detail_community;
     }
 
     @Override

@@ -116,7 +116,7 @@ public class SelectionLayout extends LinearLayout {
         public ChildView(Context context, AttributeSet attrs, int defStyleAttr) {
             super(context, attrs, defStyleAttr);
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            layout = (LinearLayout) inflater.inflate(R.layout.view_selection, this);
+            layout = (LinearLayout) inflater.inflate(R.layout.book_view_selection, this);
 
             initView();
         }
@@ -200,7 +200,7 @@ public class SelectionLayout extends LinearLayout {
             int selPosition = 0;
 
             public SelAdapter(Context context, List<String> list) {
-                super(context, list, R.layout.item_selection_view);
+                super(context, list, R.layout.book_item_selection_view);
             }
 
             @Override

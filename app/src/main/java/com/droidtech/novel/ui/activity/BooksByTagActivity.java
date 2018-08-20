@@ -63,7 +63,7 @@ public class BooksByTagActivity extends BaseActivity implements BooksByTagContra
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_books_by_tag;
+        return R.layout.book_activity_books_by_tag;
     }
 
     @Override

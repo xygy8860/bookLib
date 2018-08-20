@@ -27,32 +27,39 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.GET_TASKS" />
     
-    <application>
-        <!--<activity
+    <application
+        
+        >
+        <activity
             android:name="com.droidtech.novel.ui.activity.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>-->
+        </activity>
         <activity
             android:name="com.droidtech.novel.ui.activity.MainActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.SearchActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.SearchByAuthorActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.BookDetailActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.BooksByTagActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.ReadActivity"
             android:hardwareAccelerated="false"
@@ -68,8 +75,11 @@
         </activity>
         <activity
             android:name="com.droidtech.novel.ui.activity.BookSourceActivity"
-            android:screenOrientation="portrait" />
-        <activity android:name="com.droidtech.novel.ui.activity.ReadPDFActivity">
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.droidtech.novel.ui.activity.ReadPDFActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 
@@ -79,7 +89,9 @@
             </intent-filter>
         </activity>
         
-        <activity android:name="com.droidtech.novel.ui.activity.ReadCHMActivity">
+        <activity
+            android:name="com.droidtech.novel.ui.activity.ReadCHMActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 
@@ -90,71 +102,93 @@
         </activity>
         <activity
             android:name="com.droidtech.novel.ui.activity.TopCategoryListActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.SubCategoryListActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.SubjectBookListActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.SubjectBookListDetailActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.TopRankActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.SubRankActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.SubOtherHomeRankActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.BookDiscussionActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.BookReviewActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.BookHelpActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         
         <activity
             android:name="com.droidtech.novel.ui.activity.ReadActivity2"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.BookDiscussionDetailActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.BookReviewDetailActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.BookHelpDetailActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.BookDetailCommunityActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.GirlBookDiscussionActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.MyBookListActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.SettingActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.ScanLocalBookActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.WifiBookActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.FeedbackActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.droidtech.novel.ui.activity.FragmentActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         
         <service android:name="com.droidtech.novel.service.DownloadBookService" />
     

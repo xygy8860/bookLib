@@ -137,7 +137,7 @@ public class BookDetailActivity extends BaseActivity implements BookDetailContra
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_book_detail;
+        return R.layout.book_activity_book_detail;
     }
 
     @Override

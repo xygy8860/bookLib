@@ -85,7 +85,7 @@ public class SubjectBookListActivity extends BaseActivity implements SubjectBook
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_subject_book_list_tag;
+        return R.layout.book_activity_subject_book_list_tag;
     }
 
     @Override

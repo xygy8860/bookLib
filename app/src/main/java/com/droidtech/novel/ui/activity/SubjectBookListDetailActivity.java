@@ -92,7 +92,7 @@ public class SubjectBookListDetailActivity extends BaseRVActivity<BookListDetail
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_subject_book_list_detail;
+        return R.layout.book_activity_subject_book_list_detail;
     }
 
     @Override
@@ -121,7 +121,7 @@ public class SubjectBookListDetailActivity extends BaseRVActivity<BookListDetail
         mAdapter.addHeader(new RecyclerArrayAdapter.ItemView() {
             @Override
             public View onCreateView(ViewGroup parent) {
-                View headerView = LayoutInflater.from(mContext).inflate(R.layout.header_view_book_list_detail, parent, false);
+                View headerView = LayoutInflater.from(mContext).inflate(R.layout.book_header_view_book_list_detail, parent, false);
                 return headerView;
             }
 

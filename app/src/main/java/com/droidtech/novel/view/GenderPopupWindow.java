@@ -50,7 +50,7 @@ public class GenderPopupWindow extends PopupWindow {
         setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
         setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
 
-        mContentView = LayoutInflater.from(activity).inflate(R.layout.layout_gender_popup_window, null);
+        mContentView = LayoutInflater.from(activity).inflate(R.layout.book_layout_gender_popup_window, null);
         setContentView(mContentView);
         setFocusable(true);
         setOutsideTouchable(true);

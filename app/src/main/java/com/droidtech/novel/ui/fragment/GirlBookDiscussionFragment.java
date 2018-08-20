@@ -46,7 +46,7 @@ public class GirlBookDiscussionFragment extends BaseRVFragment<GirlBookDiscussio
 
     @Override
     public int getLayoutResId() {
-        return R.layout.common_easy_recyclerview;
+        return R.layout.book_common_easy_recyclerview;
     }
 
     @Override

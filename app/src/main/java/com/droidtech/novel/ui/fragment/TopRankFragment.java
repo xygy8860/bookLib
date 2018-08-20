@@ -56,7 +56,7 @@ public class TopRankFragment extends BaseFragment implements TopRankContract.Vie
 
     @Override
     public int getLayoutResId() {
-        return R.layout.activity_top_rank;
+        return R.layout.book_activity_top_rank;
     }
 
     @Override

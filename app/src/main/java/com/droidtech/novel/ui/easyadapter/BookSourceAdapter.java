@@ -39,7 +39,7 @@ public class BookSourceAdapter extends RecyclerArrayAdapter<BookSource> {
 
     @Override
     public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
-        return new BaseViewHolder<BookSource>(parent, R.layout.item_book_source) {
+        return new BaseViewHolder<BookSource>(parent, R.layout.book_item_book_source) {
             @Override
             public void setData(BookSource item) {
                 holder.setText(R.id.tv_source_title, item.host)

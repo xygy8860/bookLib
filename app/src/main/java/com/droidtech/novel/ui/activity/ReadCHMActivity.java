@@ -57,7 +57,7 @@ public class ReadCHMActivity extends BaseActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_read_chm;
+        return R.layout.book_activity_read_chm;
     }
 
     @Override

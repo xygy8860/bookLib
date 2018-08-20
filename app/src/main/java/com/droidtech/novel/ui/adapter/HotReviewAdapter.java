@@ -36,7 +36,7 @@ public class HotReviewAdapter extends EasyRVAdapter<HotReview.Reviews> {
     private OnRvItemClickListener itemClickListener;
 
     public HotReviewAdapter(Context context, List<HotReview.Reviews> list, OnRvItemClickListener listener) {
-        super(context, list, R.layout.item_book_detai_hot_review_list);
+        super(context, list, R.layout.book_item_book_detai_hot_review_list);
         this.itemClickListener = listener;
     }
 

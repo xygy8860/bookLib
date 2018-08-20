@@ -123,7 +123,7 @@ public class BasePDFPagerAdapter extends PagerAdapter {
     @Override
     @SuppressWarnings("NewApi")
     public Object instantiateItem(ViewGroup container, int position) {
-        View v = inflater.inflate(R.layout.view_pdf_page, container, false);
+        View v = inflater.inflate(R.layout.book_view_pdf_page, container, false);
         ImageView iv = (ImageView) v.findViewById(R.id.imageView);
 
         if (renderer == null || getCount() < position) {

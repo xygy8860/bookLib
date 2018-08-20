@@ -60,7 +60,7 @@ public class BookDetailReviewFragment extends BaseRVFragment<BookDetailReviewPre
 
     @Override
     public int getLayoutResId() {
-        return R.layout.common_easy_recyclerview;
+        return R.layout.book_common_easy_recyclerview;
     }
 
     @Override

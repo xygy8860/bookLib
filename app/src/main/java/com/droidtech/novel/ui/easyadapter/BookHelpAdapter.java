@@ -40,7 +40,7 @@ public class BookHelpAdapter extends RecyclerArrayAdapter<BookHelpList.HelpsBean
 
     @Override
     public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
-        return new BaseViewHolder<BookHelpList.HelpsBean>(parent, R.layout.item_community_book_help_list) {
+        return new BaseViewHolder<BookHelpList.HelpsBean>(parent, R.layout.book_item_community_book_help_list) {
             @Override
             public void setData(BookHelpList.HelpsBean item) {
                 if (!SettingManager.getInstance().isNoneCover()) {

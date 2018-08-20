@@ -36,7 +36,7 @@ public class BestCommentListAdapter extends EasyRVAdapter<CommentList.CommentsBe
     private OnRvItemClickListener listener;
 
     public BestCommentListAdapter(Context context, List<CommentList.CommentsBean> list) {
-        super(context, list, R.layout.item_comment_best_list);
+        super(context, list, R.layout.book_item_comment_best_list);
     }
 
     @Override

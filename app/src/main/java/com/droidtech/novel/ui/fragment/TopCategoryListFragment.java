@@ -57,7 +57,7 @@ public class TopCategoryListFragment extends BaseFragment implements TopCategory
 
     @Override
     public int getLayoutResId() {
-        return R.layout.activity_top_category_list;
+        return R.layout.book_activity_top_category_list;
     }
 
     @Override

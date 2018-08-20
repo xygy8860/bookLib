@@ -64,7 +64,7 @@ public class ScanLocalBookActivity extends BaseActivity implements RecyclerArray
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_scan_local_book;
+        return R.layout.book_activity_scan_local_book;
     }
 
     @Override

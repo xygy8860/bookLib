@@ -41,7 +41,7 @@ public class BaseApplication {
     private AppComponent appComponent;
 
     private static Context context;
-    private static BaseApplication mInstance;
+    private static BaseApplication mInstance = null;
     public static int versioncode = 10000;
 
 

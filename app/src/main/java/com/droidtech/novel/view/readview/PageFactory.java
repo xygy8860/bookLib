@@ -613,7 +613,7 @@ public class PageFactory {
     }
 
     public void convertBetteryBitmap() {
-        batteryView = (ProgressBar) LayoutInflater.from(mContext).inflate(R.layout.layout_battery_progress, null);
+        batteryView = (ProgressBar) LayoutInflater.from(mContext).inflate(R.layout.book_layout_battery_progress, null);
         batteryView.setProgressDrawable(ContextCompat.getDrawable(mContext,
                 SettingManager.getInstance().getReadTheme() < 4 ?
                         R.drawable.seekbar_battery_bg : R.drawable.seekbar_battery_night_bg));

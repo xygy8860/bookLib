@@ -50,7 +50,7 @@ public class SubOtherHomeRankActivity extends BaseRVActivity<BooksByCats.BooksBe
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_subject_book_list_detail;
+        return R.layout.book_activity_subject_book_list_detail;
     }
 
     @Override

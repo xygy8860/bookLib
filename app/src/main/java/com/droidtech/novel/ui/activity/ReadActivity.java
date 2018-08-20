@@ -220,7 +220,7 @@ public class ReadActivity extends BaseActivity implements BookReadContract.View 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         statusBarColor = ContextCompat.getColor(this, R.color.reader_menu_bg_color);
-        return R.layout.activity_read;
+        return R.layout.book_activity_read;
     }
 
     @Override

@@ -212,6 +212,7 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
     private boolean isFromSD = false;
 
     private String charset = "UTF-8";
+    private boolean isClick = false;
 
     //添加收藏需要，所以跳转的时候传递整个实体类
     public static void startActivity(Context context, Recommend.RecommendBooks recommendBooks) {
@@ -229,7 +230,7 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         statusBarColor = ContextCompat.getColor(this, R.color.reader_menu_bg_color);
-        return R.layout.activity_read;
+        return R.layout.book_activity_read;
     }
 
     @Override
@@ -325,6 +326,9 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
         mTocListPopupWindow.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                isClick = true;
+
                 mTocListPopupWindow.dismiss();
                 currentChapter = position + 1;
                 mTocListAdapter.setCurrentChapter(currentChapter);
@@ -410,7 +414,7 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
             public void onClick(View v) {
                 if (currentChapter < mChapterList.size() - 1) {
                     mTocListPopupWindow.dismiss();
-                    currentChapter = currentChapter - 1;
+                    currentChapter = currentChapter + 1;
                     mTocListAdapter.setCurrentChapter(currentChapter);
                     startRead = false;
                     showDialog();
@@ -430,6 +434,8 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
             @Override
             public void onClick(View v) {
                 if (currentChapter > 1) {
+                    isClick = true;
+
                     mTocListPopupWindow.dismiss();
                     currentChapter = currentChapter - 1;
                     mTocListAdapter.setCurrentChapter(currentChapter);
@@ -488,12 +494,14 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
 
     private void setContent(int chapter) {
 
-        if (chapter == 1) {
+        if (chapter == 1 && !isClick) {
             int oldChapter = SharedPreferencesUtil.getInstance().getInt(bookId + "chapter", 1);
             if (oldChapter > chapter) {
                 chapter = oldChapter;
             }
         }
+
+        isClick = false;
 
         currentChapter = chapter;
 

@@ -34,7 +34,7 @@ public class TopCategoryListAdapter extends EasyRVAdapter<CategoryList.MaleBean>
     private OnRvItemClickListener itemClickListener;
 
     public TopCategoryListAdapter(Context context, List<CategoryList.MaleBean> list, OnRvItemClickListener listener) {
-        super(context, list, R.layout.item_top_category_list);
+        super(context, list, R.layout.book_item_top_category_list);
         this.itemClickListener = listener;
     }
 

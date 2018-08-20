@@ -40,7 +40,7 @@ public class TocListAdapter extends EasyLVAdapter<BookMixAToc.mixToc.Chapters> {
     private boolean isEpub = false;
 
     public TocListAdapter(Context context, List<BookMixAToc.mixToc.Chapters> list, String bookId, int currentChapter) {
-        super(context, list, R.layout.item_book_read_toc_list);
+        super(context, list, R.layout.book_item_book_read_toc_list);
         this.currentChapter = currentChapter;
         this.bookId = bookId;
     }

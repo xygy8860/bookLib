@@ -91,7 +91,7 @@ public class TopRankAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getGroupView(final int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-        final View group = inflater.inflate(R.layout.item_top_rank_group, null);
+        final View group = inflater.inflate(R.layout.book_item_top_rank_group, null);
 
         ImageView ivCover = (ImageView) group.findViewById(R.id.ivRankCover);
         if (!TextUtils.isEmpty(groupArray.get(groupPosition).cover)) {
@@ -127,7 +127,7 @@ public class TopRankAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getChildView(final int groupPosition, final int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        final View child = inflater.inflate(R.layout.item_top_rank_child, null);
+        final View child = inflater.inflate(R.layout.book_item_top_rank_child, null);
 
         TextView tvName = (TextView) child.findViewById(R.id.tvRankChildName);
         tvName.setText(childArray.get(groupPosition).get(childPosition).title);

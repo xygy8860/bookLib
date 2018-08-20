@@ -37,7 +37,7 @@ public class SubjectTagsAdapter extends EasyRVAdapter<BookListTags.DataBean> {
     private OnRvItemClickListener listener;
 
     public SubjectTagsAdapter(Context context, List<BookListTags.DataBean> list) {
-        super(context, list, R.layout.item_subject_tags_list);
+        super(context, list, R.layout.book_item_subject_tags_list);
     }
 
     @Override
@@ -54,7 +54,7 @@ public class SubjectTagsAdapter extends EasyRVAdapter<BookListTags.DataBean> {
     class TagsItemAdapter extends EasyRVAdapter<String> {
 
         public TagsItemAdapter(Context context, List<String> list) {
-            super(context, list, R.layout.item_subject_tag_list);
+            super(context, list, R.layout.book_item_subject_tag_list);
         }
 
         @Override

@@ -109,7 +109,7 @@ public class BookHelpDetailActivity extends BaseRVActivity<CommentList.CommentsB
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_community_book_discussion_detail;
+        return R.layout.book_activity_community_book_discussion_detail;
     }
 
     @Override
@@ -143,7 +143,7 @@ public class BookHelpDetailActivity extends BaseRVActivity<CommentList.CommentsB
         mAdapter.addHeader(new RecyclerArrayAdapter.ItemView() {
             @Override
             public View onCreateView(ViewGroup parent) {
-                View headerView = LayoutInflater.from(BookHelpDetailActivity.this).inflate(R.layout.header_view_book_discussion_detail, parent, false);
+                View headerView = LayoutInflater.from(BookHelpDetailActivity.this).inflate(R.layout.book_header_view_book_discussion_detail, parent, false);
                 return headerView;
             }
 

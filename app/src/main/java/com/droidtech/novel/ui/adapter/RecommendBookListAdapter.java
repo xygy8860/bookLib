@@ -39,7 +39,7 @@ public class RecommendBookListAdapter extends EasyRVAdapter<RecommendBookList.Re
 
     public RecommendBookListAdapter(Context context, List<RecommendBookList.RecommendBook> list,
                                     OnRvItemClickListener listener) {
-        super(context, list, R.layout.item_book_detail_recommend_book_list);
+        super(context, list, R.layout.book_item_book_detail_recommend_book_list);
         this.itemClickListener = listener;
     }
 

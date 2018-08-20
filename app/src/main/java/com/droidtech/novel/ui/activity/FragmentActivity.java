@@ -21,7 +21,7 @@ public class FragmentActivity extends BaseActivity{
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_fragment;
+        return R.layout.book_activity_fragment;
     }
 
     @Override

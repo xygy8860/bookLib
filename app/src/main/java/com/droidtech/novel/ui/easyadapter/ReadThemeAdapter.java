@@ -35,7 +35,7 @@ public class ReadThemeAdapter extends EasyLVAdapter<ReadTheme> {
     private int selected = 0;
 
     public ReadThemeAdapter(Context context, List<ReadTheme> list, int selected) {
-        super(context, list, R.layout.item_read_theme);
+        super(context, list, R.layout.book_item_read_theme);
         this.selected = selected;
     }
 

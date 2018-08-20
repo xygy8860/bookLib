@@ -40,7 +40,7 @@ public class SubCategoryAdapter extends RecyclerArrayAdapter<BooksByCats.BooksBe
 
     @Override
     public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
-        return new BaseViewHolder<BooksByCats.BooksBean>(parent, R.layout.item_sub_category_list) {
+        return new BaseViewHolder<BooksByCats.BooksBean>(parent, R.layout.book_item_sub_category_list) {
             @Override
             public void setData(BooksByCats.BooksBean item) {
                 super.setData(item);

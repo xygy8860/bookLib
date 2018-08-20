@@ -112,7 +112,7 @@ public class EasyRecyclerView extends FrameLayout {
 
             mEmptyId = a.getResourceId(R.styleable.superrecyclerview_layout_empty, 0);
             mProgressId = a.getResourceId(R.styleable.superrecyclerview_layout_progress, 0);
-            mErrorId = a.getResourceId(R.styleable.superrecyclerview_layout_error, R.layout.common_net_error_view);
+            mErrorId = a.getResourceId(R.styleable.superrecyclerview_layout_error, R.layout.book_common_net_error_view);
         } finally {
             a.recycle();
         }
@@ -123,7 +123,7 @@ public class EasyRecyclerView extends FrameLayout {
             return;
         }
         //生成主View
-        View v = LayoutInflater.from(getContext()).inflate(R.layout.common_recyclerview, this);
+        View v = LayoutInflater.from(getContext()).inflate(R.layout.book_common_recyclerview, this);
         mPtrLayout = (SwipeRefreshLayout) v.findViewById(R.id.ptr_layout);
         mPtrLayout.setEnabled(false);
 

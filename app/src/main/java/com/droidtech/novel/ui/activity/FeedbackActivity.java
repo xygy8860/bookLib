@@ -37,7 +37,7 @@ public class FeedbackActivity extends BaseActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_feedback;
+        return R.layout.book_activity_feedback;
     }
 
     @Override

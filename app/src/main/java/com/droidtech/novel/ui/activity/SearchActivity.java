@@ -106,7 +106,7 @@ public class SearchActivity extends BaseRVActivity<SearchDetail.SearchBooks> imp
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_search;
+        return R.layout.book_activity_search;
     }
 
     @Override

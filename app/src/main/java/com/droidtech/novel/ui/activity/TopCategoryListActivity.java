@@ -59,7 +59,7 @@ public class TopCategoryListActivity extends BaseActivity implements TopCategory
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_top_category_list;
+        return R.layout.book_activity_top_category_list;
     }
 
     @Override

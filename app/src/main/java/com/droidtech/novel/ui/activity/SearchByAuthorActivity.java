@@ -53,7 +53,7 @@ public class SearchByAuthorActivity extends BaseRVActivity<SearchDetail.SearchBo
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_common_recyclerview;
+        return R.layout.book_activity_common_recyclerview;
     }
 
     @Override

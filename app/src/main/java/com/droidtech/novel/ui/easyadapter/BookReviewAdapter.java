@@ -40,7 +40,7 @@ public class BookReviewAdapter extends RecyclerArrayAdapter<BookReviewList.Revie
 
     @Override
     public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
-        return new BaseViewHolder<BookReviewList.ReviewsBean>(parent, R.layout.item_community_book_review_list) {
+        return new BaseViewHolder<BookReviewList.ReviewsBean>(parent, R.layout.book_item_community_book_review_list) {
             @Override
             public void setData(BookReviewList.ReviewsBean item) {
                 if (!SettingManager.getInstance().isNoneCover()) {

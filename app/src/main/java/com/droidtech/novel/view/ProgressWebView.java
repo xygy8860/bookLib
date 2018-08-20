@@ -63,7 +63,7 @@ public class ProgressWebView extends LinearLayout {
     }
 
     private void initView(Context context) {
-        View.inflate(context, R.layout.layout_web_progress, this);
+        View.inflate(context, R.layout.book_layout_web_progress, this);
         ButterKnife.bind(this);
     }
 

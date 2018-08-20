@@ -48,15 +48,15 @@ public abstract class BaseRVActivity<T> extends BaseActivity implements OnLoadMo
     protected void initAdapter(boolean refreshable, boolean loadmoreable) {
         if (mAdapter != null) {
             mAdapter.setOnItemClickListener(this);
-            mAdapter.setError(R.layout.common_error_view).setOnClickListener(new View.OnClickListener() {
+            mAdapter.setError(R.layout.book_common_error_view).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     mAdapter.resumeMore();
                 }
             });
             if (loadmoreable) {
-                mAdapter.setMore(R.layout.common_more_view, this);
-                mAdapter.setNoMore(R.layout.common_nomore_view);
+                mAdapter.setMore(R.layout.book_common_more_view, this);
+                mAdapter.setNoMore(R.layout.book_common_nomore_view);
             }
             if (refreshable && mRecyclerView != null) {
                 mRecyclerView.setRefreshListener(this);

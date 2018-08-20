@@ -91,7 +91,7 @@ public class SubCategoryListActivity extends BaseActivity implements SubCategory
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_sub_category_list;
+        return R.layout.book_activity_sub_category_list;
     }
 
     @Override

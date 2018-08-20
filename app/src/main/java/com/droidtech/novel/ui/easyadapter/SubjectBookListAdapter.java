@@ -38,7 +38,7 @@ public class SubjectBookListAdapter extends RecyclerArrayAdapter<BookLists.BookL
 
     @Override
     public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
-        return new BaseViewHolder<BookLists.BookListsBean>(parent, R.layout.item_sub_category_list) {
+        return new BaseViewHolder<BookLists.BookListsBean>(parent, R.layout.book_item_sub_category_list) {
             @Override
             public void setData(BookLists.BookListsBean item) {
                 super.setData(item);

@@ -35,7 +35,7 @@ public class MinorAdapter extends EasyLVAdapter<String> {
     private int current = 0;
 
     public MinorAdapter(Context context, List<String> list) {
-        super(context, list, R.layout.item_minor_list);
+        super(context, list, R.layout.book_item_minor_list);
     }
 
     @Override

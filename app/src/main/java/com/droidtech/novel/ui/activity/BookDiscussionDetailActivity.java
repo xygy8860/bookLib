@@ -52,7 +52,6 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * 综合讨论区详情
@@ -111,7 +110,7 @@ public class BookDiscussionDetailActivity extends BaseRVActivity<CommentList.Com
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_community_book_discussion_detail;
+        return R.layout.book_activity_community_book_discussion_detail;
     }
 
     @Override
@@ -145,7 +144,7 @@ public class BookDiscussionDetailActivity extends BaseRVActivity<CommentList.Com
         mAdapter.addHeader(new RecyclerArrayAdapter.ItemView() {
             @Override
             public View onCreateView(ViewGroup parent) {
-                View headerView = LayoutInflater.from(BookDiscussionDetailActivity.this).inflate(R.layout.header_view_book_discussion_detail, parent, false);
+                View headerView = LayoutInflater.from(BookDiscussionDetailActivity.this).inflate(R.layout.book_header_view_book_discussion_detail, parent, false);
                 return headerView;
             }
 

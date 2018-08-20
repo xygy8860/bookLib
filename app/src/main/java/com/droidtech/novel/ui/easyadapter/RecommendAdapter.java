@@ -44,7 +44,7 @@ public class RecommendAdapter extends RecyclerArrayAdapter<Recommend.RecommendBo
 
     @Override
     public BaseViewHolder OnCreateViewHolder(ViewGroup parent, int viewType) {
-        return new BaseViewHolder<Recommend.RecommendBooks>(parent, R.layout.item_recommend_list) {
+        return new BaseViewHolder<Recommend.RecommendBooks>(parent, R.layout.book_item_recommend_list) {
             @Override
             public void setData(final Recommend.RecommendBooks item) {
                 super.setData(item);

@@ -71,7 +71,7 @@ public class SubRankActivity extends BaseActivity {
 
     @Override
     public int getLayoutId() {
-        return R.layout.activity_sub_rank;
+        return R.layout.book_activity_sub_rank;
     }
 
     @Override

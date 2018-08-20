@@ -38,7 +38,7 @@ public class BooksByTagAdapter extends EasyRVAdapter<BooksByTag.TagBook> {
 
     public BooksByTagAdapter(Context context, List<BooksByTag.TagBook> list,
                              OnRvItemClickListener listener) {
-        super(context, list, R.layout.item_tag_book_list);
+        super(context, list, R.layout.book_item_tag_book_list);
         this.itemClickListener = listener;
     }
 
