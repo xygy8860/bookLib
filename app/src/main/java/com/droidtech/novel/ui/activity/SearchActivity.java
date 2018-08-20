@@ -173,7 +173,7 @@ public class SearchActivity extends BaseRVActivity<SearchDetail.SearchBooks> imp
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 mListPopupWindow.dismiss();
-                TextView tv = (TextView) view.findViewById(R2.id.tvAutoCompleteItem);
+                TextView tv = (TextView) view.findViewById(R.id.tvAutoCompleteItem);
                 String str = tv.getText().toString();
                 search(str);
             }
@@ -229,7 +229,7 @@ public class SearchActivity extends BaseRVActivity<SearchDetail.SearchBooks> imp
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_search, menu);
 
-        searchMenuItem = menu.findItem(R2.id.action_search);//在菜单中找到对应控件的item
+        searchMenuItem = menu.findItem(R.id.action_search);//在菜单中找到对应控件的item
         searchView = (SearchView) MenuItemCompat.getActionView(searchMenuItem);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
 

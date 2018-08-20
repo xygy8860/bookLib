@@ -176,7 +176,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
         Fragment mFragment = fragmentManager.findFragmentByTag(tag);
         if (mFragment == null) {
             mFragment = mFragmentList.get(index);
-            transaction.add(R2.id.tabcontent, mFragment, tag);
+            transaction.add(R.id.tabcontent, mFragment, tag);
         }
         transaction.show(mFragment);
         transaction.commitAllowingStateLoss();

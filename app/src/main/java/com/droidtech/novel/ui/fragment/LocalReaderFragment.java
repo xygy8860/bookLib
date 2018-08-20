@@ -109,7 +109,7 @@ public class LocalReaderFragment extends BaseRVFragment<RecommendPresenter, Reco
                 });
             }
         });
-        mRecyclerView.getEmptyView().findViewById(R2.id.btnToAdd).setOnClickListener(new View.OnClickListener() {
+        mRecyclerView.getEmptyView().findViewById(R.id.btnToAdd).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //TopRankActivity.startActivity(activity);
