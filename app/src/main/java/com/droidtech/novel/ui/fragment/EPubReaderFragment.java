@@ -1,4 +1,4 @@
-//package com.droidtech.novel.ui.fragment;
+package com.droidtech.novel.ui.fragment;//package com.droidtech.novel.ui.fragment;
 //
 //import android.graphics.PorterDuff;
 //import android.os.Bundle;

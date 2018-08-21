@@ -515,7 +515,7 @@ public class TagGroup extends ViewGroup {
 
     @Override
     public ViewGroup.LayoutParams generateLayoutParams(AttributeSet attrs) {
-        return new TagGroup.LayoutParams(getContext(), attrs);
+        return new LayoutParams(getContext(), attrs);
     }
 
     /**
@@ -582,8 +582,8 @@ public class TagGroup extends ViewGroup {
      * For {@link TagGroup} save and restore state.
      */
     static class SavedState extends BaseSavedState {
-        public static final Parcelable.Creator<SavedState> CREATOR =
-                new Parcelable.Creator<SavedState>() {
+        public static final Creator<SavedState> CREATOR =
+                new Creator<SavedState>() {
                     public SavedState createFromParcel(Parcel in) {
                         return new SavedState(in);
                     }
@@ -725,9 +725,9 @@ public class TagGroup extends ViewGroup {
             super(context);
             this.color = color;
             setPadding(horizontalPadding, verticalPadding, horizontalPadding, verticalPadding);
-            setLayoutParams(new TagGroup.LayoutParams(
-                    TagGroup.LayoutParams.WRAP_CONTENT,
-                    TagGroup.LayoutParams.WRAP_CONTENT));
+            setLayoutParams(new LayoutParams(
+                    LayoutParams.WRAP_CONTENT,
+                    LayoutParams.WRAP_CONTENT));
 
             setGravity(Gravity.CENTER);
             setText(text);
@@ -1027,7 +1027,7 @@ public class TagGroup extends ViewGroup {
          * Android: Backspace in WebView/BaseInputConnection</a>
          */
         private class ZanyInputConnection extends InputConnectionWrapper {
-            public ZanyInputConnection(android.view.inputmethod.InputConnection target, boolean mutable) {
+            public ZanyInputConnection(InputConnection target, boolean mutable) {
                 super(target, mutable);
             }
 

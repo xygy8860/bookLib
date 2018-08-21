@@ -1,4 +1,4 @@
-//package com.droidtech.novel.ui.activity;
+package com.droidtech.novel.ui.activity;//package com.droidtech.novel.ui.activity;
 //
 //import android.animation.Animator;
 //import android.animation.AnimatorListenerAdapter;

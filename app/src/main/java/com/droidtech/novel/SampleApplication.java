@@ -1,4 +1,4 @@
-//package com.droidtech.novel;
+package com.droidtech.novel;//package com.droidtech.novel;
 //
 //import com.tencent.tinker.loader.app.TinkerApplication;
 //import com.tencent.tinker.loader.shareutil.ShareConstants;

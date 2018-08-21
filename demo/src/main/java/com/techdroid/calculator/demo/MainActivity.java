@@ -30,4 +30,14 @@ public class MainActivity extends AppCompatActivity implements OnChapterClickLis
     public void click(Activity activity) {
         ToastUtils.showToast("test");
     }
+
+    @Override
+    public void start(Activity activity) {
+
+    }
+
+    @Override
+    public void downApk(Activity activity) {
+
+    }
 }

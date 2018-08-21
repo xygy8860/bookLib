@@ -109,16 +109,21 @@ public class RecommendFragment extends BaseRVFragment<RecommendPresenter, Recomm
                 });
             }
         });
-        mRecyclerView.getEmptyView().findViewById(R.id.btnToAdd).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //TopRankActivity.startActivity(activity);
-                //TopRankFragment.startFragmentActivity(activity);
 
-                startActivity(new Intent(getContext(), SearchActivity.class));
-            }
-        });
-        onRefresh();
+        try {
+            mRecyclerView.getEmptyView().findViewById(R.id.btnToAdd).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //TopRankActivity.startActivity(activity);
+                    //TopRankFragment.startFragmentActivity(activity);
+
+                    startActivity(new Intent(getContext(), SearchActivity.class));
+                }
+            });
+            onRefresh();
+        } catch (Exception e) {
+
+        }
     }
 
     @Override

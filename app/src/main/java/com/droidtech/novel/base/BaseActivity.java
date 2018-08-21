@@ -30,7 +30,6 @@ import android.view.WindowManager;
 
 import com.droidtech.novel.BaseApplication;
 import com.droidtech.novel.R;
-import com.droidtech.novel.R2;
 import com.droidtech.novel.component.AppComponent;
 import com.droidtech.novel.utils.SharedPreferencesUtil;
 import com.droidtech.novel.utils.StatusBarCompat;
@@ -61,7 +60,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         mContext = this;
         ButterKnife.bind(this);
         setupActivityComponent(BaseApplication.getInstance().getAppComponent());
-        mCommonToolbar = ButterKnife.findById(this, R2.id.common_toolbar);
+        mCommonToolbar = (Toolbar) findViewById(R.id.common_toolbar);
         if (mCommonToolbar != null) {
             initToolBar();
             setSupportActionBar(mCommonToolbar);

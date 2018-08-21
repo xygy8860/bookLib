@@ -1,4 +1,4 @@
-//package com.droidtech.novel.ui.adapter;
+package com.droidtech.novel.ui.adapter;//package com.droidtech.novel.ui.adapter;
 //
 //import android.support.v4.app.Fragment;
 //import android.support.v4.app.FragmentManager;

@@ -1,4 +1,4 @@
-//package com.droidtech.novel.view.epubview;
+package com.droidtech.novel.view.epubview;//package com.droidtech.novel.view.epubview;
 //
 //import android.content.Context;
 //import android.graphics.Canvas;

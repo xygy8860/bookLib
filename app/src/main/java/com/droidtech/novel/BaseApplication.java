@@ -44,7 +44,6 @@ public class BaseApplication {
     private static BaseApplication mInstance = null;
     public static int versioncode = 10000;
 
-
     public BaseApplication(Context ctx) {
         context = ctx;
         mInstance = this;
@@ -53,7 +52,7 @@ public class BaseApplication {
         init();
         initCompoent();
         AppUtils.init(ctx);
-        //CrashHandler.getInstance().init(ctx);
+        CrashHandler.getInstance().init(ctx);
         initNightMode();
     }
 

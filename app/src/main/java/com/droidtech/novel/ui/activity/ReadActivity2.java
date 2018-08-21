@@ -604,10 +604,12 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
 
     @OnClick(R2.id.tvBookReadMode)
     public void onClickChangeMode() { // 日/夜间模式切换
-        gone(rlReadAaSet, rlReadMark);
+        /*gone(rlReadAaSet, rlReadMark);
 
         boolean isNight = !SharedPreferencesUtil.getInstance().getBoolean(Constant.ISNIGHT, false);
-        changedMode(isNight, -1);
+        changedMode(isNight, -1);*/
+
+        ToastUtils.showLongToast("请右上角点击下载小说APP\n内嵌不支持夜间模式");
     }
 
     private void changedMode(boolean isNight, int position) {

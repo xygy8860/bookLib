@@ -10,4 +10,8 @@ import android.app.Activity;
 public interface OnChapterClickListener {
 
     void click(Activity activity);
+
+    void start(Activity activity);
+
+    void downApk(Activity activity);
 }

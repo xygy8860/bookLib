@@ -1,4 +1,4 @@
-//package com.droidtech.novel.view.epubview;
+package com.droidtech.novel.view.epubview;//package com.droidtech.novel.view.epubview;
 //
 //import android.annotation.TargetApi;
 //import android.content.Context;

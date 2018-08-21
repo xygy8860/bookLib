@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/common_gray_bg"
+    android:divider="?android:listDivider"
+    android:orientation="vertical"
+    android:showDividers="middle">
+    
+    <TextView
+        android:id="@+id/book_action_scan_local_book"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/home_menu_3"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="@string/menu_main_scan_local_book"
+        android:textSize="16sp" />
+    
+    <TextView
+        android:id="@+id/book_action_settings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/home_menu_6"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:padding="15dp"
+        android:text="@string/menu_main_settings"
+        android:textSize="16sp"
+        android:visibility="gone" />
+    
+    <TextView
+        android:id="@+id/book_action_night_mode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/home_menu_1"
+        android:drawablePadding="5dp"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="下载小说APP"
+        android:textSize="16sp" />
+
+</LinearLayout>

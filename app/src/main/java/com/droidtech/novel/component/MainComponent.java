@@ -19,6 +19,7 @@ import com.droidtech.novel.ui.activity.MainActivity;
 import com.droidtech.novel.ui.activity.SettingActivity;
 import com.droidtech.novel.ui.activity.WifiBookActivity;
 import com.droidtech.novel.ui.fragment.LocalReaderFragment;
+import com.droidtech.novel.ui.fragment.MainFragment;
 import com.droidtech.novel.ui.fragment.RecommendFragment;
 import com.droidtech.novel.ui.fragment.TopRankFragment;
 
@@ -30,6 +31,7 @@ public interface MainComponent {
 
     LocalReaderFragment inject(LocalReaderFragment fragment);
 
+    MainFragment inject(MainFragment fragment);
     RecommendFragment inject(RecommendFragment fragment);
 
     TopRankFragment inject(TopRankFragment fragment);

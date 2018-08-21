@@ -483,7 +483,7 @@ public class RVPIndicator extends LinearLayout {
      */
     private TextView createTextView(String text) {
         TextView tv = new TextView(getContext());
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+        LayoutParams lp = new LayoutParams(
                 LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
         lp.width = getWidth() / mTabVisibleCount;
         tv.setGravity(Gravity.CENTER);

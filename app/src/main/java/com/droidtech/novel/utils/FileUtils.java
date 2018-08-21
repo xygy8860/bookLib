@@ -333,7 +333,7 @@ public class FileUtils {
             OutputStreamWriter out = new OutputStreamWriter(outstream);
             out.write(fileContent);
             out.close();
-        } catch (java.io.IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
