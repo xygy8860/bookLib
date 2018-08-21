@@ -23,8 +23,8 @@ import android.widget.TextView;
 import com.droidtech.novel.R;
 import com.droidtech.novel.bean.BookMixAToc;
 import com.droidtech.novel.utils.FileUtils;
-import com.yuyh.easyadapter.abslistview.EasyLVAdapter;
-import com.yuyh.easyadapter.abslistview.EasyLVHolder;
+import easyadapter.abslistview.EasyLVAdapter;
+import easyadapter.abslistview.EasyLVHolder;
 
 import java.util.List;
 

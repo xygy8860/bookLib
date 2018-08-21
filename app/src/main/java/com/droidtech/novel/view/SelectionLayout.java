@@ -32,11 +32,12 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.droidtech.novel.R;
-import com.yuyh.easyadapter.abslistview.EasyLVAdapter;
-import com.yuyh.easyadapter.abslistview.EasyLVHolder;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import easyadapter.abslistview.EasyLVAdapter;
+import easyadapter.abslistview.EasyLVHolder;
 
 /**
  * @author yuyh.

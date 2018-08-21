@@ -1,4 +1,4 @@
-package com.yuyh.easyadapter.glide;
+package easyadapter.glide;
 
 import android.content.Context;
 import android.graphics.Bitmap;

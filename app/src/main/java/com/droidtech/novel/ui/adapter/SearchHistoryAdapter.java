@@ -18,8 +18,8 @@ package com.droidtech.novel.ui.adapter;
 import android.content.Context;
 
 import com.droidtech.novel.R;
-import com.yuyh.easyadapter.abslistview.EasyLVAdapter;
-import com.yuyh.easyadapter.abslistview.EasyLVHolder;
+import easyadapter.abslistview.EasyLVAdapter;
+import easyadapter.abslistview.EasyLVHolder;
 
 import java.util.List;
 

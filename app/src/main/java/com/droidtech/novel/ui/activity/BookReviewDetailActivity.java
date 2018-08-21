@@ -45,8 +45,8 @@ import com.droidtech.novel.view.BookContentTextView;
 import com.droidtech.novel.view.SupportDividerItemDecoration;
 import com.droidtech.novel.view.XLHRatingBar;
 import com.droidtech.novel.view.recyclerview.adapter.RecyclerArrayAdapter;
-import com.yuyh.easyadapter.glide.GlideCircleTransform;
-import com.yuyh.easyadapter.glide.GlideRoundTransform;
+import easyadapter.glide.GlideCircleTransform;
+import easyadapter.glide.GlideRoundTransform;
 
 import java.util.ArrayList;
 import java.util.List;

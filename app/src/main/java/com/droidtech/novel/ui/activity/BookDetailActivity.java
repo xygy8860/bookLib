@@ -51,7 +51,7 @@ import com.droidtech.novel.utils.ToastUtils;
 import com.droidtech.novel.view.DrawableCenterButton;
 import com.droidtech.novel.view.TagColor;
 import com.droidtech.novel.view.TagGroup;
-import com.yuyh.easyadapter.glide.GlideRoundTransform;
+import easyadapter.glide.GlideRoundTransform;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

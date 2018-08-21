@@ -183,28 +183,24 @@ public class MainActivity extends BaseActivity implements MainContract.View {
         fragmentManager.executePendingTransactions();
     }
 
-    @OnClick({R2.id.home_tab_main, R2.id.home_tab_rank, R2.id.home_tab_classfiy, R2.id.home_tab_setting})
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R2.id.home_tab_main:
-                setTabSelection(0);
-                break;
+    @OnClick({R2.id.home_tab_main})
+    public void onClickTabMain(View view) {
+        setTabSelection(0);
+    }
 
-            case R2.id.home_tab_rank:
-                setTabSelection(1);
-                break;
+    @OnClick({R2.id.home_tab_rank})
+    public void onClickTabRank(View view) {
+        setTabSelection(1);
+    }
 
-            case R2.id.home_tab_classfiy:
-                setTabSelection(2);
-                break;
+    @OnClick({R2.id.home_tab_classfiy})
+    public void onClickTabClassfiy(View view) {
+        setTabSelection(2);
+    }
 
-            case R2.id.home_tab_setting:
-                setTabSelection(3);
-                break;
-
-            default:
-                break;
-        }
+    @OnClick({R2.id.home_tab_setting})
+    public void onClickTabSetting(View view) {
+        setTabSelection(3);
     }
 
     @Override
@@ -237,55 +233,23 @@ public class MainActivity extends BaseActivity implements MainContract.View {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        switch (id) {
-            case R2.id.action_search:
-                startActivity(new Intent(MainActivity.this, SearchActivity.class));
-                break;
-            case R2.id.action_login:
-                /*if (popupWindow == null) {
-                    popupWindow = new LoginPopupWindow(this);
-                }
-                popupWindow.showAtLocation(mCommonToolbar, Gravity.CENTER, 0, 0);*/
-                break;
-            case R2.id.action_my_message:
-                /*if (popupWindow == null) {
-                    popupWindow = new LoginPopupWindow(this);
-                }
-                popupWindow.showAtLocation(mCommonToolbar, Gravity.CENTER, 0, 0);*/
-                break;
-            case R2.id.action_sync_bookshelf:
-                showDialog();
-                mPresenter.syncBookShelf();
-               /* if (popupWindow == null) {
-                    popupWindow = new LoginPopupWindow(this);
-                    popupWindow.setLoginTypeListener(this);
-                }
-                popupWindow.showAtLocation(mCommonToolbar, Gravity.CENTER, 0, 0);*/
-                break;
-            case R2.id.action_scan_local_book:
-                ScanLocalBookActivity.startActivity(this);
-                break;
-            case R2.id.action_wifi_book:
-                WifiBookActivity.startActivity(this);
-                break;
-            case R2.id.action_feedback:
-                FeedbackActivity.startActivity(this);
-                break;
-            case R2.id.action_night_mode:
-                if (SharedPreferencesUtil.getInstance().getBoolean(Constant.ISNIGHT, false)) {
-                    SharedPreferencesUtil.getInstance().putBoolean(Constant.ISNIGHT, false);
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                } else {
-                    SharedPreferencesUtil.getInstance().putBoolean(Constant.ISNIGHT, true);
-                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                }
-                recreate();
-                break;
-            case R2.id.action_settings:
-                SettingActivity.startActivity(this);
-                break;
-            default:
-                break;
+        if (id == R.id.action_search) {
+            startActivity(new Intent(MainActivity.this, SearchActivity.class));
+        } else if (id == R.id.action_scan_local_book) {
+            ScanLocalBookActivity.startActivity(this);
+        } else if (id == R.id.action_night_mode) {
+
+            if (SharedPreferencesUtil.getInstance().getBoolean(Constant.ISNIGHT, false)) {
+                SharedPreferencesUtil.getInstance().putBoolean(Constant.ISNIGHT, false);
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            } else {
+                SharedPreferencesUtil.getInstance().putBoolean(Constant.ISNIGHT, true);
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            }
+
+            recreate();
+        } else if (id == R.id.action_settings) {
+            SettingActivity.startActivity(this);
         }
         return super.onOptionsItemSelected(item);
     }

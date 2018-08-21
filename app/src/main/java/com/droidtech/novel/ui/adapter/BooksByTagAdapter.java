@@ -23,8 +23,8 @@ import com.droidtech.novel.R;
 import com.droidtech.novel.base.Constant;
 import com.droidtech.novel.bean.BooksByTag;
 import com.droidtech.novel.common.OnRvItemClickListener;
-import com.yuyh.easyadapter.recyclerview.EasyRVAdapter;
-import com.yuyh.easyadapter.recyclerview.EasyRVHolder;
+import easyadapter.recyclerview.EasyRVAdapter;
+import easyadapter.recyclerview.EasyRVHolder;
 
 import java.util.List;
 

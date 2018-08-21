@@ -29,7 +29,7 @@ import com.droidtech.novel.R;
 import com.droidtech.novel.base.Constant;
 import com.droidtech.novel.bean.RankingList;
 import com.droidtech.novel.common.OnRvItemClickListener;
-import com.yuyh.easyadapter.glide.GlideCircleTransform;
+import easyadapter.glide.GlideCircleTransform;
 
 import java.util.List;
 

@@ -24,10 +24,11 @@ import com.droidtech.novel.bean.RecommendBookList;
 import com.droidtech.novel.common.OnRvItemClickListener;
 import com.droidtech.novel.manager.SettingManager;
 import com.droidtech.novel.utils.NoDoubleClickListener;
-import com.yuyh.easyadapter.recyclerview.EasyRVAdapter;
-import com.yuyh.easyadapter.recyclerview.EasyRVHolder;
 
 import java.util.List;
+
+import easyadapter.recyclerview.EasyRVAdapter;
+import easyadapter.recyclerview.EasyRVHolder;
 
 /**
  * @author lfh.

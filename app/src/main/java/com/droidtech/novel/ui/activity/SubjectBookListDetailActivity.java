@@ -39,7 +39,7 @@ import com.droidtech.novel.ui.contract.SubjectBookListDetailContract;
 import com.droidtech.novel.ui.easyadapter.SubjectBookListDetailBooksAdapter;
 import com.droidtech.novel.ui.presenter.SubjectBookListDetailPresenter;
 import com.droidtech.novel.view.recyclerview.adapter.RecyclerArrayAdapter;
-import com.yuyh.easyadapter.glide.GlideCircleTransform;
+import easyadapter.glide.GlideCircleTransform;
 
 import java.util.ArrayList;
 import java.util.List;

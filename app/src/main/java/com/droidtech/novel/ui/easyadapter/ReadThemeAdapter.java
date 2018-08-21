@@ -21,8 +21,8 @@ import com.droidtech.novel.R;
 import com.droidtech.novel.bean.support.ReadTheme;
 import com.droidtech.novel.manager.ThemeManager;
 import com.droidtech.novel.utils.LogUtils;
-import com.yuyh.easyadapter.abslistview.EasyLVAdapter;
-import com.yuyh.easyadapter.abslistview.EasyLVHolder;
+import easyadapter.abslistview.EasyLVAdapter;
+import easyadapter.abslistview.EasyLVHolder;
 
 import java.util.List;
 

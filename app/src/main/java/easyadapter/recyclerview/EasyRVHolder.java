@@ -1,4 +1,4 @@
-package com.yuyh.easyadapter.recyclerview;
+package easyadapter.recyclerview;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -16,9 +16,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.yuyh.easyadapter.glide.GlideCircleTransform;
-import com.yuyh.easyadapter.glide.GlideRoundTransform;
-import com.yuyh.easyadapter.helper.ViewHelper;
+
+import easyadapter.glide.GlideCircleTransform;
+import easyadapter.glide.GlideRoundTransform;
+import easyadapter.helper.ViewHelper;
 
 public class EasyRVHolder extends RecyclerView.ViewHolder implements ViewHelper.RecyclerView<EasyRVHolder> {
 

@@ -1,12 +1,12 @@
-package com.yuyh.easyadapter.helper;
+package easyadapter.helper;
 
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
-import com.yuyh.easyadapter.abslistview.EasyLVHolder;
-import com.yuyh.easyadapter.recyclerview.EasyRVHolder;
+import easyadapter.abslistview.EasyLVHolder;
+import easyadapter.recyclerview.EasyRVHolder;
 
 /**
  * @author yuyh.

@@ -1,4 +1,4 @@
-package com.yuyh.easyadapter.abslistview;
+package easyadapter.abslistview;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -6,9 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.yuyh.easyadapter.helper.DataHelper;
-
 import java.util.List;
+
+import easyadapter.helper.DataHelper;
 
 /**
  * https://github.com/smuyyh/EasyAdapter

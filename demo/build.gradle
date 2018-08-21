@@ -29,5 +29,4 @@ dependencies {
     apt 'com.jakewharton:butterknife-compiler:8.8.1'
 
     compile project(":app")
-    compile project(":testlib")
 }

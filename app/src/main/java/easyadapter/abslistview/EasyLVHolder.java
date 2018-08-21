@@ -1,4 +1,4 @@
-package com.yuyh.easyadapter.abslistview;
+package easyadapter.abslistview;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -15,7 +15,7 @@ import android.widget.Checkable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.yuyh.easyadapter.helper.ViewHelper;
+import easyadapter.helper.ViewHelper;
 
 /**
  * @author yuyh.
