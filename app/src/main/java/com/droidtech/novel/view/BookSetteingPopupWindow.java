@@ -65,6 +65,8 @@ public class BookSetteingPopupWindow extends PopupWindow {
                 if (VarUtils.listener != null) {
                     VarUtils.listener.downApk(activity);
                 }
+
+                dismiss();
             }
         });
 
@@ -72,6 +74,8 @@ public class BookSetteingPopupWindow extends PopupWindow {
             @Override
             public void onClick(View v) {
                 SettingActivity.startActivity(activity);
+
+                dismiss();
             }
         });
     }
