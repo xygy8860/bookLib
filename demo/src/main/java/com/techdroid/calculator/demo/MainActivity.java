@@ -18,9 +18,8 @@ public class MainActivity extends AppCompatActivity implements OnChapterClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new BaseApplication(getApplication());
+        new BaseApplication(getApplication().getApplicationContext());
         VarUtils.listener = this;
-
 
         startActivity(new Intent(this, com.droidtech.novel.ui.activity.MainActivity.class));
     }
@@ -32,6 +31,11 @@ public class MainActivity extends AppCompatActivity implements OnChapterClickLis
 
     @Override
     public void start(Activity activity) {
+
+    }
+
+    @Override
+    public void close() {
 
     }
 

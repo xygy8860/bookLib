@@ -54,18 +54,18 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.droidtech.novel.ui.activity.ReadActivity"
-            android:hardwareAccelerated="false"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar.FullScreen">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                
-                <category android:name="android.intent.category.DEFAULT" />
-                
-                <data android:mimeType="text/plain" />
-            </intent-filter>
-        </activity>
+        android:name="com.droidtech.novel.ui.activity.ReadActivity"
+        android:hardwareAccelerated="false"
+        android:screenOrientation="portrait"
+        android:theme="@style/AppTheme.NoActionBar.FullScreen">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+        
+            <category android:name="android.intent.category.DEFAULT" />
+        
+            <data android:mimeType="text/plain" />
+        </intent-filter>
+    </activity>
         <activity
             android:name="com.droidtech.novel.ui.activity.BookSourceActivity"
             android:screenOrientation="portrait"

@@ -13,5 +13,7 @@ public interface OnChapterClickListener {
 
     void start(Activity activity);
 
+    void close(); // 关闭窗口
+
     void downApk(Activity activity);
 }

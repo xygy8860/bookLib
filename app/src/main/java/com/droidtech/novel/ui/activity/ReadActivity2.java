@@ -298,9 +298,10 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
         params.topMargin = ScreenUtils.getStatusBarHeight(this) - 2;
         mLlBookReadTop.setLayoutParams(params);
 
-        initPagerWidget();
         initAASet();
         initTocList();
+
+        initPagerWidget();
 
         mPresenter.attachView(this);
         // 本地收藏  直接打开
@@ -412,7 +413,7 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
         mChapterNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (currentChapter < mChapterList.size() - 1) {
+                try {
                     mTocListPopupWindow.dismiss();
                     currentChapter = currentChapter + 1;
                     mTocListAdapter.setCurrentChapter(currentChapter);
@@ -424,7 +425,8 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
                     if (VarUtils.listener != null) {
                         VarUtils.listener.click(ReadActivity2.this);
                     }
-                } else {
+                } catch (Exception e) {
+                    hideDialog();
                     ToastUtils.showLongToast("没有下一章了");
                 }
             }
@@ -433,7 +435,7 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
         mChapterPre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (currentChapter > 1) {
+                try {
                     isClick = true;
 
                     mTocListPopupWindow.dismiss();
@@ -447,7 +449,8 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
                     if (VarUtils.listener != null) {
                         VarUtils.listener.click(ReadActivity2.this);
                     }
-                } else {
+                } catch (Exception e) {
+                    hideDialog();
                     ToastUtils.showLongToast("已经是第一章了");
                 }
             }
@@ -574,6 +577,10 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
             mTocListPopupWindow.dismiss();
         } else {
             finish();
+
+            if (VarUtils.listener != null) {
+                VarUtils.listener.close();
+            }
         }
     }
 
@@ -907,6 +914,11 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
             default:
                 break;
         }
+
+        if (VarUtils.listener != null) {
+            VarUtils.listener.close();
+        }
+
         return super.onKeyDown(keyCode, event);
     }
 

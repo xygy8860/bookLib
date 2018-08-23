@@ -8,7 +8,7 @@ android {
     defaultConfig {
         applicationId "com.techdroid.calculator.demo"
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -29,4 +29,6 @@ dependencies {
     apt 'com.jakewharton:butterknife-compiler:8.8.1'
 
     compile project(":app")
+
+    //compile 'com.github.xygy8860:bookLib:1.0.3'
 }
