@@ -16,8 +16,6 @@
   -->
 <resources>
 
-    BaseContract application theme.
-
     <style name="AppTheme" parent="Theme.AppCompat.DayNight">
         <!--标题栏的颜色-->
         <item name="colorPrimary">@color/colorPrimary</item>
