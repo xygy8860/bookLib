@@ -39,8 +39,6 @@ public class SharedPreferencesUtil {
     public Context context;
     public SharedPreferences prefs;
     public SharedPreferences.Editor editor;
-    private static SPEncryptUtils mSpEncrypt;
-    private static SharedPreferences.Editor mEditorEncrypt;
 
     public synchronized static SharedPreferencesUtil getInstance() {
         return prefsUtil;
@@ -51,9 +49,6 @@ public class SharedPreferencesUtil {
         prefsUtil.context = context;
         prefsUtil.prefs = prefsUtil.context.getSharedPreferences(prefsname, mode);
         prefsUtil.editor = prefsUtil.prefs.edit();
-
-        mSpEncrypt = new SPEncryptUtils(context, prefsname + "en", mode);
-        mEditorEncrypt = mSpEncrypt.edit();
     }
 
     private SharedPreferencesUtil() {
@@ -70,11 +65,11 @@ public class SharedPreferencesUtil {
 
 
     public String getString(String key, String defaultVal) {
-        return mSpEncrypt.getString(key, defaultVal);
+        return prefs.getString(key, defaultVal);
     }
 
     public String getString(String key) {
-        return mSpEncrypt.getString(key, null);
+        return prefs.getString(key, null);
     }
 
     public int getInt(String key, int defaultVal) {
@@ -122,8 +117,8 @@ public class SharedPreferencesUtil {
 
 
     public SharedPreferencesUtil putString(String key, String value) {
-        mEditorEncrypt.putString(key, value);
-        mEditorEncrypt.commit();
+        editor.putString(key, value);
+        editor.commit();
         return this;
     }
 

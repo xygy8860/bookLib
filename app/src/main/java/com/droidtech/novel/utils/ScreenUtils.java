@@ -228,9 +228,13 @@ public class ScreenUtils {
      * @param activity
      */
     public static void stopAutoBrightness(Activity activity) {
-        Settings.System.putInt(activity.getContentResolver(),
-                Settings.System.SCREEN_BRIGHTNESS_MODE,
-                Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
+        try {
+            Settings.System.putInt(activity.getContentResolver(),
+                    Settings.System.SCREEN_BRIGHTNESS_MODE,
+                    Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
+        } catch (Exception e) {
+
+        }
     }
 
     /**
@@ -240,9 +244,13 @@ public class ScreenUtils {
      */
 
     public static void startAutoBrightness(Activity activity) {
-        Settings.System.putInt(activity.getContentResolver(),
-                Settings.System.SCREEN_BRIGHTNESS_MODE,
-                Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
+        try {
+            Settings.System.putInt(activity.getContentResolver(),
+                    Settings.System.SCREEN_BRIGHTNESS_MODE,
+                    Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
+        } catch (Exception e) {
+
+        }
     }
 
     /**
