@@ -78,7 +78,6 @@ public class DeviceUtils {
             }
         }
 
-
         return IMEI;
     }
 

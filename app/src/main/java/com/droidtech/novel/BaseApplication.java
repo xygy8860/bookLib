@@ -27,6 +27,7 @@ import com.droidtech.novel.component.DaggerAppComponent;
 import com.droidtech.novel.module.AppModule;
 import com.droidtech.novel.module.BookApiModule;
 import com.droidtech.novel.utils.AppUtils;
+import com.droidtech.novel.utils.ChapterSPUtil;
 import com.droidtech.novel.utils.DeviceUtils;
 import com.droidtech.novel.utils.LogUtils;
 import com.droidtech.novel.utils.SharedPreferencesUtil;
@@ -102,6 +103,7 @@ public class BaseApplication {
      */
     protected void initPrefs() {
         SharedPreferencesUtil.init(context, "book_preference", Context.MODE_MULTI_PROCESS);
+        ChapterSPUtil.init(context, "book_chapter_preference", Context.MODE_MULTI_PROCESS);
     }
 
     protected void initNightMode() {

@@ -28,11 +28,21 @@
         android:clickable="false"
         android:focusable="false"
         android:layerType="hardware"
-        android:visibility="gone" />
+        android:visibility="visible" />
     
-    <ScrollView
+    <ListView
+        android:id="@+id/chapter_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:listSelector="@android:color/transparent">
+    
+    
+    </ListView>
+    
+    <!--<ScrollView
         android:id="@+id/chapter_scrollview"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="match_parent">
         
         <LinearLayout
@@ -94,7 +104,7 @@
         
         </LinearLayout>
     
-    </ScrollView>
+    </ScrollView>-->
     
     <LinearLayout
         android:id="@+id/llBookReadTop"
@@ -113,10 +123,10 @@
             android:id="@+id/ivBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
             android:paddingLeft="10dp"
-            android:paddingRight="15dp"
             android:paddingTop="5dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="5dp"
             android:src="@drawable/ab_back" />
         
         <TextView
@@ -184,9 +194,9 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/llBookReadBottom"
         android:background="#89232323"
-        android:paddingBottom="10dp"
         android:paddingLeft="25dp"
         android:paddingTop="10dp"
+        android:paddingBottom="10dp"
         android:singleLine="true"
         android:text="@string/book_read_download_progress"
         android:textColor="@color/white"

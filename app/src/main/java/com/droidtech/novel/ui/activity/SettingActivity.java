@@ -94,7 +94,7 @@ public class SettingActivity extends BaseActivity {
         mTvSort.setText(getResources().getStringArray(R.array.setting_dialog_sort_choice)[
                 SharedPreferencesUtil.getInstance().getBoolean(Constant.ISBYUPDATESORT, true) ? 0 : 1]);
         mTvFlipStyle.setText(getResources().getStringArray(R.array.setting_dialog_style_choice)[
-                SharedPreferencesUtil.getInstance().getInt(Constant.FLIP_STYLE, 0)]);
+                SharedPreferencesUtil.getInstance().getInt(Constant.FLIP_STYLE, 2)]);
     }
 
 
@@ -132,7 +132,7 @@ public class SettingActivity extends BaseActivity {
         new AlertDialog.Builder(mContext)
                 .setTitle("阅读页翻页效果")
                 .setSingleChoiceItems(getResources().getStringArray(R.array.setting_dialog_style_choice),
-                        SharedPreferencesUtil.getInstance().getInt(Constant.FLIP_STYLE, 0),
+                        SharedPreferencesUtil.getInstance().getInt(Constant.FLIP_STYLE, 2),
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

@@ -30,17 +30,16 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -66,10 +65,12 @@ import com.droidtech.novel.manager.SettingManager;
 import com.droidtech.novel.manager.ThemeManager;
 import com.droidtech.novel.service.DownloadBookService;
 import com.droidtech.novel.ui.adapter.BookMarkAdapter;
+import com.droidtech.novel.ui.adapter.ChapterAdapter;
 import com.droidtech.novel.ui.adapter.TocListAdapter;
 import com.droidtech.novel.ui.contract.BookReadContract;
 import com.droidtech.novel.ui.easyadapter.ReadThemeAdapter;
 import com.droidtech.novel.ui.presenter.BookReadPresenter;
+import com.droidtech.novel.utils.ChapterSPUtil;
 import com.droidtech.novel.utils.FileUtils;
 import com.droidtech.novel.utils.FormatUtils;
 import com.droidtech.novel.utils.LogUtils;
@@ -113,11 +114,8 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
     @BindView(R2.id.tvBookReadSource)
     TextView mTvBookReadSource;
 
-    @BindView(R2.id.flReadWidget)
-    FrameLayout flReadWidget;
-
     // 章节信息
-    @BindView(R2.id.chapter_scrollview)
+    /*@BindView(R2.id.chapter_scrollview)
     ScrollView mChapterScrollView;
     @BindView(R2.id.chapter_title)
     TextView mChapterTitle;
@@ -126,7 +124,7 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
     @BindView(R2.id.chapter_pre)
     TextView mChapterPre;
     @BindView(R2.id.chapter_next)
-    TextView mChapterNext;
+    TextView mChapterNext;*/
 
     @BindView(R2.id.llBookReadTop)
     LinearLayout mLlBookReadTop;
@@ -176,10 +174,15 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
     @BindView(R2.id.gvTheme)
     GridView gvTheme;
 
+    @BindView(R2.id.chapter_list)
+    ListView mListview;
+
     private View decodeView;
 
     @Inject
     BookReadPresenter mPresenter;
+
+    private ChapterAdapter mAdapter = new ChapterAdapter();
 
     private List<BookMixAToc.mixToc.Chapters> mChapterList = new ArrayList<>();
     private ListPopupWindow mTocListPopupWindow;
@@ -247,6 +250,9 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
 
     @Override
     public void initDatas(boolean savedInstanceState) {
+
+        ChapterSPUtil.getInstance().removeAll();
+
         recommendBooks = (Recommend.RecommendBooks) getIntent().getSerializableExtra(INTENT_BEAN);
         bookId = recommendBooks._id;
         isFromSD = getIntent().getBooleanExtra(INTENT_SD, false);
@@ -274,6 +280,8 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
         }
         EventBus.getDefault().register(this);
         showDialog();
+
+        mListview.setAdapter(mAdapter);
 
         mTvBookReadTocTitle.setText(recommendBooks.title);
         intentFilter.addAction(Intent.ACTION_BATTERY_CHANGED);
@@ -393,24 +401,22 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
         registerReceiver(receiver, intentFilter);
         if (SharedPreferencesUtil.getInstance().getBoolean(Constant.ISNIGHT, false)) {
             int color = ContextCompat.getColor(mContext, R.color.chapter_content_night);
-            mChapterContent.setTextColor(color);
-            mChapterTitle.setTextColor(color);
+            mAdapter.setColor(color);
         }
 
         float size = SharedPreferencesUtil.getInstance().getFloat("size", 0);
         if (size >= 12) {
-            mChapterContent.setTextSize(size);
-            mChapterTitle.setTextSize(size);
+            mAdapter.setSize(size);
         }
 
-        mChapterContent.setOnClickListener(new View.OnClickListener() {
+        mListview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 toggleReadBar();
             }
         });
 
-        mChapterNext.setOnClickListener(new View.OnClickListener() {
+        /*mChapterNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
@@ -430,9 +436,9 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
                     ToastUtils.showLongToast("没有下一章了");
                 }
             }
-        });
+        });*/
 
-        mChapterPre.setOnClickListener(new View.OnClickListener() {
+        /*mChapterPre.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
@@ -454,7 +460,49 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
                     ToastUtils.showLongToast("已经是第一章了");
                 }
             }
+        });*/
+
+        // 监听listview滚到最底部
+        mListview.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+                switch (scrollState) {
+                    // 当不滚动时
+                    case AbsListView.OnScrollListener.SCROLL_STATE_IDLE:
+                        // 判断滚动到底部
+                        if (view.getLastVisiblePosition() == (view.getCount() - 1)) {
+                            try {
+                                mTocListPopupWindow.dismiss();
+                                currentChapter = currentChapter + 1;
+                                mTocListAdapter.setCurrentChapter(currentChapter);
+                                startRead = false;
+                                showDialog();
+                                readCurrentChapter();
+                                hideReadBar();
+
+                                if (VarUtils.listener != null) {
+                                    VarUtils.listener.click(ReadActivity2.this);
+                                }
+                            } catch (Exception e) {
+                                hideDialog();
+
+                                currentChapter--;
+
+                                if (!ChapterSPUtil.getInstance().getBoolean(bookId + currentChapter)) {
+                                    ToastUtils.showLongToast("没有下一章了");
+                                    ChapterSPUtil.getInstance().putBoolean(bookId + currentChapter, true);
+                                }
+                            }
+                        }
+                        break;
+                }
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+            }
         });
+
     }
 
     /**
@@ -498,13 +546,13 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
     private void setContent(int chapter) {
 
         if (chapter == 1 && !isClick) {
-            int oldChapter = SharedPreferencesUtil.getInstance().getInt(bookId + "chapter", 1);
+            int oldChapter = SettingManager.getInstance().getReadProgress(bookId)[0];
             if (oldChapter > chapter) {
                 chapter = oldChapter;
             }
+        } else if (isClick) {
+            mAdapter.clear();
         }
-
-        isClick = false;
 
         currentChapter = chapter;
 
@@ -516,19 +564,28 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
             try {
                 txt = new String(FileUtils.getBytesFromFile(file), charset);
 
-                mChapterTitle.setText(mChapterList.get(chapter - 1).title);
-                mChapterContent.setText(txt);
+                /*mChapterTitle.setText(mChapterList.get(chapter - 1).title);
+                mChapterContent.setText(txt);*/
+
+                ChapterAdapter.Chapter chapter1 = new ChapterAdapter.Chapter();
+                chapter1.title = mChapterList.get(chapter - 1).title;
+                chapter1.content = txt;
+                mAdapter.addData(chapter1);
+
+                if (isClick) {
+                    mListview.setSelectionFromTop(0, 0);
+                }
 
                 // 保存阅读进度
-                SharedPreferencesUtil.getInstance().putInt(bookId + "chapter", chapter);
-
-                // 滑动到顶部
-                mChapterScrollView.scrollTo(0, 0);
+                //SharedPreferencesUtil.getInstance().putInt(bookId + "chapter", chapter);
+                SettingManager.getInstance().saveReadProgress(bookId, currentChapter, 0, 0);
 
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
         }
+
+        isClick = false;
     }
 
     @Override
@@ -632,8 +689,7 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
         gvAdapter.select(curTheme);
 
         int color = ContextCompat.getColor(mContext, isNight ? R.color.chapter_content_night : R.color.chapter_content_day);
-        mChapterContent.setTextColor(color);
-        mChapterTitle.setTextColor(color);
+        mAdapter.setColor(color);
 
         mTvBookReadMode.setText(getString(isNight ? R.string.book_read_mode_day_manual_setting
                 : R.string.book_read_mode_night_manual_setting));
@@ -1038,8 +1094,7 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
         if (progress >= 0 && progress <= 10) {
             seekbarFontSize.setProgress(progress);
             float size = 12 + 1.7f * progress;
-            mChapterContent.setTextSize(size);
-            mChapterTitle.setTextSize(size);
+            mAdapter.setSize(size);
 
             SharedPreferencesUtil.getInstance().putFloat("size", size);
         }

@@ -31,6 +31,7 @@ import android.widget.TextView;
 import com.droidtech.novel.R;
 import com.droidtech.novel.R2;
 import com.droidtech.novel.base.BaseRVFragment;
+import com.droidtech.novel.base.Constant;
 import com.droidtech.novel.bean.BookMixAToc;
 import com.droidtech.novel.bean.Recommend;
 import com.droidtech.novel.bean.support.DownloadMessage;
@@ -44,10 +45,12 @@ import com.droidtech.novel.manager.CollectionsManager;
 import com.droidtech.novel.service.DownloadBookService;
 import com.droidtech.novel.ui.activity.BookDetailActivity;
 import com.droidtech.novel.ui.activity.MainActivity;
+import com.droidtech.novel.ui.activity.ReadActivity;
 import com.droidtech.novel.ui.activity.ReadActivity2;
 import com.droidtech.novel.ui.contract.RecommendContract;
 import com.droidtech.novel.ui.easyadapter.RecommendAdapter;
 import com.droidtech.novel.ui.presenter.RecommendPresenter;
+import com.droidtech.novel.utils.SharedPreferencesUtil;
 import com.droidtech.novel.view.recyclerview.adapter.RecyclerArrayAdapter;
 
 import org.greenrobot.eventbus.EventBus;
@@ -163,7 +166,12 @@ public class LocalReaderFragment extends BaseRVFragment<RecommendPresenter, Reco
     public void onItemClick(int position) {
         if (isVisible(llBatchManagement)) //批量管理时，屏蔽点击事件
             return;
-        ReadActivity2.startActivity(activity, mAdapter.getItem(position), mAdapter.getItem(position).isFromSD);
+
+        if (SharedPreferencesUtil.getInstance().getInt(Constant.FLIP_STYLE, 2) == 2) {
+            ReadActivity2.startActivity(activity, mAdapter.getItem(position), mAdapter.getItem(position).isFromSD);
+        } else {
+            ReadActivity.startActivity(activity, mAdapter.getItem(position), mAdapter.getItem(position).isFromSD);
+        }
     }
 
     @Override

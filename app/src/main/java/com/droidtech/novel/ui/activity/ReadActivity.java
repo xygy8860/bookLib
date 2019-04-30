@@ -118,9 +118,6 @@ public class ReadActivity extends BaseActivity implements BookReadContract.View 
     @BindView(R2.id.flReadWidget)
     FrameLayout flReadWidget;
 
-    @BindView(R2.id.chapter_content)
-    TextView mChapterContent;
-
     @BindView(R2.id.llBookReadTop)
     LinearLayout mLlBookReadTop;
     @BindView(R2.id.tvBookReadTocTitle)

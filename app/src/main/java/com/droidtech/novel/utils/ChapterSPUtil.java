@@ -33,25 +33,25 @@ import java.util.Set;
 /**
  * Created by lfh on 2016/8/13.
  */
-public class SharedPreferencesUtil {
+public class ChapterSPUtil {
 
-    private static SharedPreferencesUtil prefsUtil;
+    private static ChapterSPUtil prefsUtil;
     public Context context;
     public SharedPreferences prefs;
     public SharedPreferences.Editor editor;
 
-    public synchronized static SharedPreferencesUtil getInstance() {
+    public synchronized static ChapterSPUtil getInstance() {
         return prefsUtil;
     }
 
     public static void init(Context context, String prefsname, int mode) {
-        prefsUtil = new SharedPreferencesUtil();
+        prefsUtil = new ChapterSPUtil();
         prefsUtil.context = context;
         prefsUtil.prefs = prefsUtil.context.getSharedPreferences(prefsname, mode);
         prefsUtil.editor = prefsUtil.prefs.edit();
     }
 
-    public SharedPreferencesUtil() {
+    public ChapterSPUtil() {
     }
 
 
@@ -116,31 +116,31 @@ public class SharedPreferencesUtil {
     }
 
 
-    public SharedPreferencesUtil putString(String key, String value) {
+    public ChapterSPUtil putString(String key, String value) {
         editor.putString(key, value);
         editor.commit();
         return this;
     }
 
-    public SharedPreferencesUtil putInt(String key, int value) {
+    public ChapterSPUtil putInt(String key, int value) {
         editor.putInt(key, value);
         editor.commit();
         return this;
     }
 
-    public SharedPreferencesUtil putFloat(String key, float value) {
+    public ChapterSPUtil putFloat(String key, float value) {
         editor.putFloat(key, value);
         editor.commit();
         return this;
     }
 
-    public SharedPreferencesUtil putLong(String key, long value) {
+    public ChapterSPUtil putLong(String key, long value) {
         editor.putLong(key, value);
         editor.commit();
         return this;
     }
 
-    public SharedPreferencesUtil putBoolean(String key, boolean value) {
+    public ChapterSPUtil putBoolean(String key, boolean value) {
         editor.putBoolean(key, value);
         editor.commit();
         return this;
@@ -151,7 +151,7 @@ public class SharedPreferencesUtil {
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
-    public SharedPreferencesUtil putStringSet(String key, Set<String> value) {
+    public ChapterSPUtil putStringSet(String key, Set<String> value) {
         editor.putStringSet(key, value);
         editor.commit();
         return this;
@@ -214,15 +214,16 @@ public class SharedPreferencesUtil {
         return null;
     }
 
-    public SharedPreferencesUtil remove(String key) {
+    public ChapterSPUtil remove(String key) {
         editor.remove(key);
         editor.commit();
         return this;
     }
 
-    public SharedPreferencesUtil removeAll() {
+    public ChapterSPUtil removeAll() {
         editor.clear();
         editor.commit();
         return this;
     }
 }
+
