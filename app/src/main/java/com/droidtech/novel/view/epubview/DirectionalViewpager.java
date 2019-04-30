@@ -17,7 +17,6 @@ import android.support.annotation.DrawableRes;
 import android.support.v4.os.ParcelableCompat;
 import android.support.v4.os.ParcelableCompatCreatorCallbacks;
 import android.support.v4.view.AccessibilityDelegateCompat;
-import android.support.v4.view.KeyEventCompat;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.VelocityTrackerCompat;
@@ -2405,15 +2404,15 @@ public class DirectionalViewpager extends ViewGroup {
 
             switch (action) {
                 case MotionEvent.ACTION_MOVE: {
-                /*
-                 * mIsBeingDragged == false, otherwise the shortcut would have caught it. Check
-                 * whether the user has moved far enough from his original down touch.
-                 */
+                    /*
+                     * mIsBeingDragged == false, otherwise the shortcut would have caught it. Check
+                     * whether the user has moved far enough from his original down touch.
+                     */
 
-                /*
-                * Locally do absolute value. mLastMotionY is set to the y value
-                * of the down event.
-                */
+                    /*
+                     * Locally do absolute value. mLastMotionY is set to the y value
+                     * of the down event.
+                     */
                     final int activePointerId = mActivePointerId;
                     if (activePointerId == INVALID_POINTER) {
                         // If we don't have a valid id, the touch down wasn't on content.
@@ -2460,10 +2459,10 @@ public class DirectionalViewpager extends ViewGroup {
                 }
 
                 case MotionEvent.ACTION_DOWN: {
-                /*
-                 * Remember location of down touch.
-                 * ACTION_DOWN always refers to pointer index 0.
-                 */
+                    /*
+                     * Remember location of down touch.
+                     * ACTION_DOWN always refers to pointer index 0.
+                     */
                     mLastMotionX = mInitialMotionX = ev.getX();
                     mLastMotionY = mInitialMotionY = ev.getY();
                     mActivePointerId = MotionEventCompat.getPointerId(ev, 0);
@@ -2501,22 +2500,22 @@ public class DirectionalViewpager extends ViewGroup {
             }
             mVelocityTracker.addMovement(ev);
 */
-        /*
-         * The only time we want to intercept motion events is if we are in the
-         * drag mode.
-         */
+            /*
+             * The only time we want to intercept motion events is if we are in the
+             * drag mode.
+             */
         } else {
             switch (action) {
                 case MotionEvent.ACTION_MOVE: {
-                /*
-                 * mIsBeingDragged == false, otherwise the shortcut would have caught it. Check
-                 * whether the user has moved far enough from his original down touch.
-                 */
+                    /*
+                     * mIsBeingDragged == false, otherwise the shortcut would have caught it. Check
+                     * whether the user has moved far enough from his original down touch.
+                     */
 
-                /*
-                * Locally do absolute value. mLastMotionY is set to the y value
-                * of the down event.
-                */
+                    /*
+                     * Locally do absolute value. mLastMotionY is set to the y value
+                     * of the down event.
+                     */
                     final int activePointerId = mActivePointerId;
                     if (activePointerId == INVALID_POINTER) {
                         // If we don't have a valid id, the touch down wasn't on content.
@@ -2562,10 +2561,10 @@ public class DirectionalViewpager extends ViewGroup {
                 }
 
                 case MotionEvent.ACTION_DOWN: {
-                /*
-                 * Remember location of down touch.
-                 * ACTION_DOWN always refers to pointer index 0.
-                 */
+                    /*
+                     * Remember location of down touch.
+                     * ACTION_DOWN always refers to pointer index 0.
+                     */
                     mLastMotionX = mInitialMotionX = ev.getX();
                     mLastMotionY = mInitialMotionY = ev.getY();
                     mActivePointerId = MotionEventCompat.getPointerId(ev, 0);
@@ -3537,9 +3536,9 @@ public class DirectionalViewpager extends ViewGroup {
                     if (Build.VERSION.SDK_INT >= 11) {
                         // The focus finder had a bug handling FOCUS_FORWARD and FOCUS_BACKWARD
                         // before Android 3.0. Ignore the tab key on those devices.
-                        if (KeyEventCompat.hasNoModifiers(event)) {
+                        if (event.hasNoModifiers()) {
                             handled = arrowScroll(FOCUS_FORWARD);
-                        } else if (KeyEventCompat.hasModifiers(event, KeyEvent.META_SHIFT_ON)) {
+                        } else if (event.hasModifiers(KeyEvent.META_SHIFT_ON)) {
                             handled = arrowScroll(FOCUS_BACKWARD);
                         }
                     }
