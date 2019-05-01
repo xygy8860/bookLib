@@ -39,6 +39,21 @@
     
     </ListView>
     
+    <!--广告布局-->
+    <LinearLayout
+        android:id="@+id/chapter_ad_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" />
+    
+    <LinearLayout
+        android:id="@+id/chapter_ad_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" />
+    
     <!--<ScrollView
         android:id="@+id/chapter_scrollview"
         android:layout_width="match_parent"

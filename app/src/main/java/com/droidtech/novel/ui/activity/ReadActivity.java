@@ -75,6 +75,7 @@ import com.droidtech.novel.utils.LogUtils;
 import com.droidtech.novel.utils.ScreenUtils;
 import com.droidtech.novel.utils.SharedPreferencesUtil;
 import com.droidtech.novel.utils.ToastUtils;
+import com.droidtech.novel.utils.VarUtils;
 import com.droidtech.novel.view.readview.BaseReadView;
 import com.droidtech.novel.view.readview.OnReadStateChangeListener;
 import com.droidtech.novel.view.readview.OverlappedWidget;
@@ -275,6 +276,11 @@ public class ReadActivity extends BaseActivity implements BookReadContract.View 
                         EventManager.refreshCollectionList();
                     }
                 });
+
+        if (VarUtils.listener != null) {
+            VarUtils.listener.start(this);
+            VarUtils.listener.bannerAd((ViewGroup) findViewById(R.id.chapter_ad_layout), (ViewGroup) findViewById(R.id.chapter_ad_layout2));
+        }
     }
 
     @Override
@@ -480,6 +486,9 @@ public class ReadActivity extends BaseActivity implements BookReadContract.View 
             mTocListPopupWindow.dismiss();
         } else {
             finish();
+            if (VarUtils.listener != null) {
+                VarUtils.listener.close();
+            }
         }
     }
 
@@ -808,6 +817,11 @@ public class ReadActivity extends BaseActivity implements BookReadContract.View 
             default:
                 break;
         }
+
+        if (VarUtils.listener != null) {
+            VarUtils.listener.close();
+        }
+
         return super.onKeyDown(keyCode, event);
     }
 

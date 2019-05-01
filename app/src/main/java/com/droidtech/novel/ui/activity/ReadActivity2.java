@@ -296,6 +296,11 @@ public class ReadActivity2 extends BaseActivity implements BookReadContract.View
                         EventManager.refreshCollectionList();
                     }
                 });
+
+        if (VarUtils.listener != null) {
+            VarUtils.listener.start(this);
+            VarUtils.listener.bannerAd((ViewGroup) findViewById(R.id.chapter_ad_layout), (ViewGroup) findViewById(R.id.chapter_ad_layout2));
+        }
     }
 
     @Override
